@@ -11,12 +11,12 @@
     "package.json"
   ],
   "scripts": {
-    "build": "npm run build:tsc & npm run build build:copy",
+    "build": "pnpm run build:tsc & pnpm run build:copy",
     "build:copy": "cpx \"src/**/*.{d.ts,vue,html,png,svg,jpg}\" dist",
     "build:tsc": "tsc",
     "clean": "rimraf dist",
     "commit": "git add . && git cz",
-    "dev": "pnpm -r --parallel build:tsc --watch & pnpm -r --parallel build:copy --watch",
+    "dev": "pnpm run build:tsc --watch & pnpm run build:copy --watch",
     "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,10 +42,11 @@
     "access": "public"
   },
   "dependencies": {
-    "naive-ui": "2.34.2",
+    "@vicons/ionicons5": "^0.12.0",
+    "naive-ui": "2.38.2",
     "revili": "0.0.1-alpha.7",
     "vue": "3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.3.0",
