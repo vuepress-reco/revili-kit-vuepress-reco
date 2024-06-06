@@ -1,7 +1,8 @@
 import {defineKit, useServerSocket} from 'revili/node'
 import type {Kit} from 'revili/node'
 
-import { USER_PATH } from '../constants/index.js'
+import { USER_PATH, Events } from '../constants/index.js'
+import path from 'node:path'
 
 const defaultPlugin: Kit = defineKit({
   name: 'revili-kit-default',
@@ -16,6 +17,12 @@ const defaultPlugin: Kit = defineKit({
 
         return
       }
+    })
+
+    socket?.on(Events.GET_INIT_FOLDER, () => {
+      const initFloder = getUserPath()
+      path
+      socket?.send(Events.GET_INIT_FOLDER, initFloder)
     })
   },
 
