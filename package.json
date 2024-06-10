@@ -18,7 +18,9 @@
     "commit": "git add . && git cz",
     "dev": "pnpm run build:tsc --watch & pnpm run build:copy --watch",
     "eslint": "eslint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npm publish --tag latest",
+    "release:pre": "npm publish --tag next"
   },
   "config": {
     "commitizen": {
