@@ -14,6 +14,21 @@ const defaultPlugin: Kit = defineKit({
   },
 
   registerCommand: ({program}) => {},
+
+  viteOptions: {
+    resolve: {
+      alias: [
+        {
+          find: 'date-fns/esm/',
+          replacement: 'date-fns/esm/',
+        },
+        {
+          find: 'date-fns/',
+          replacement: 'date-fns/esm/',
+        },
+      ],
+    },
+  }
 })
 
 
