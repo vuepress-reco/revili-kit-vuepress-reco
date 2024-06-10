@@ -40,7 +40,7 @@
       />
     </n-form-item>
 
-    <n-form-item label="Docs Repo" path="recoThemeConfig.docsDir">
+    <n-form-item label="Docs Folder" path="recoThemeConfig.docsDir">
       <n-input
         v-model:value="configProject.recoThemeConfig.docsDir"
         placeholder="Input the folder where the document is located, default /"
@@ -78,9 +78,12 @@
 import { ref } from 'vue'
 import { FormInst, useMessage } from 'naive-ui'
 import { useConfig, useFormData } from "./composables";
+import { useClientSocket } from 'revili/client'
+import { Events } from '../../../../../constants/index.js'
+const socket = useClientSocket()
 
 const message = useMessage()
-const { configProject } = useFormData()
+const { projectPath, configProject } = useFormData()
 const { rules, bundlerOptions } = useConfig()
 
 const formRef = ref<FormInst | null>(null)
@@ -88,6 +91,7 @@ const formRef = ref<FormInst | null>(null)
 const handleNext = (cb: () => void) => {
   formRef.value?.validate((errors) => {
     if (!errors) {
+      socket?.send(Events.CREATE_PROJECT, projectPath.value)
       if (cb) cb()
     } else {
       message.error('Please fill in the complete information!')

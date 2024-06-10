@@ -4,7 +4,7 @@ import { useData, type StepFormData } from "../../../composables/useData.js";
 export function useFormData() {
   const { dataSymbol } = useData()
   const formData = inject<StepFormData>(dataSymbol) as StepFormData
-  const { configProject } = toRefs(formData)
+  const { projectPath, configProject } = toRefs(formData)
 
-  return { configProject }
+  return { projectPath, configProject }
 }

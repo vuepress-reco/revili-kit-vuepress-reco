@@ -15,7 +15,7 @@ export interface ConfigProject {
 
 const dataSymbol = Symbol('data')
 
-const formData = reactive<StepFormData>({
+const initData = {
   projectPath: '',
   configProject: {
     title: '',
@@ -31,8 +31,15 @@ const formData = reactive<StepFormData>({
       autoSetSeries: false
     }
   }
-})
+}
 
-export function useData(): { formData: StepFormData, dataSymbol: Symbol } {
-  return { formData, dataSymbol }
+const formData = reactive<StepFormData>(initData)
+
+export function useData(): { formData: StepFormData, dataSymbol: Symbol, resetFormData: () => void } {
+  const resetFormData = () => {
+    // @ts-ignore
+    formData.value = JSON.parse(JSON.stringify(initDatas))
+  }
+
+  return { formData, dataSymbol, resetFormData }
 }

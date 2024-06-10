@@ -10,8 +10,8 @@ export function useConfig() {
   }
 
   const bundlerOptions = [
-    { label: 'viteBundler', value: 'viteBundler' },
-    { label: 'webpackBundler', value: 'webpackBundler' }
+    { label: 'Vite', value: 'viteBundler' },
+    { label: 'Webpack', value: 'webpackBundler' }
   ]
 
   return { rules, bundlerOptions }
