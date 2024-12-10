@@ -6,8 +6,8 @@ import ProjectCreate from '../pages/ProjectCreate/index.vue'
 import ProjectManager from '../pages/ProjectManager/index.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/projects', component: ProjectList },
+  // { path: '/', component: Home },
+  { path: '/', component: ProjectList },
   { path: '/create', component: ProjectCreate },
   { path: '/project/:id', component: ProjectManager },
 ]

@@ -10,14 +10,16 @@
 </template>
 
 <script lang="ts" setup>
+import { useMessage } from 'naive-ui'
 import { useClientSocket } from 'revili/client'
 
 import { useStep } from "./composables";
 import { Events } from '../../../../../constants/index.js'
 import { useFormData } from '../ConfigureProject/composables';
 
-const { projectPath, configProject } = useFormData()
+const message = useMessage()
 const socket = useClientSocket()
+const { projectPath, configProject } = useFormData()
 const { currStep, currStatus, steps, prev, next } = useStep()
 
 socket?.on(Events.CREATE_PROJECT, ({ result, data }) => {
@@ -30,6 +32,8 @@ socket?.on(Events.CREATE_PROJECT, ({ result, data }) => {
       configProject: configProject.value
     }
     socket?.send(Events.CONFIGURE_PROJECT, params)
+
+    message.success('Create project success!')
     next()
   }
 })

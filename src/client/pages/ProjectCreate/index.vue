@@ -4,7 +4,7 @@
       <n-step v-for="(item, index) in steps" :title="item" :key="index" :style="index === 2 ? 'flex: none' : ''" />
     </n-steps>
 
-    <div style="flex: 1; padding-top: 40px;">
+    <div style="flex: 1; padding: 40px; overflow: scroll;">
       <select-folder ref="selectFolderRef" v-if="currStep === 1" />
       <configure-project ref="configureProjectRef" v-else-if="currStep === 2" />
       <create-project ref="createProjectRef" v-else-if="currStep === 3" />
@@ -15,7 +15,7 @@
         round
         tertiary
         type="primary"
-        v-show="currStep !== 1"
+        v-show="!(currStep === 1 || (currStep === 3 && createProjectStatus))"
         @click="handlePrev()"
       >
         Prev Step
@@ -26,6 +26,7 @@
         tertiary
         type="primary"
         style="margin-left: 40px;"
+        v-show="!(currStep === 3 && !createProjectStatus)"
         @click="handleNext()"
       >
         {{ btnNextText }}
@@ -35,19 +36,27 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, provide, computed } from "vue";
 import { useRouter } from "vue-router";
+import { ref, provide, computed } from "vue";
+import { useClientSocket } from "revili/client";
 
+import { Events } from "../../../constants";
 import { useSteps, useData } from "./composables";
 import { SelectFolder, CreateProject, ConfigureProject } from "./components";
 
 const router = useRouter()
+const socket = useClientSocket()
 const { formData, dataSymbol } = useData()
 const { currStep, currStepStatus, steps,  prevStep, nextStep } = useSteps()
 
+const createProjectStatus = ref(false)
 const selectFolderRef = ref<{ handleNext: any }>()
 const configureProjectRef = ref<{ handleNext: any }>()
 const createProjectRef = ref<{ handleNext: any }>()
+
+socket?.on(Events.CREATE_PROJECT, ({ result, data }) => {
+  createProjectStatus.value = result !== 'fail'
+})
 
 const btnNextText = computed(() => {
   if (currStep.value === 2) return 'Create'
@@ -80,7 +89,7 @@ function handleNext() {
 
   if (currStep.value === 3 && createProjectRef.value) {
     createProjectRef.value.handleNext(() => {
-      router.push('/projects')
+      router.push('/')
     })
 
     return

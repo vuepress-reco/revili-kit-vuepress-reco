@@ -1,3 +1,5 @@
-export * from './createProject.js'
+export * from './openEditor.js'
 export * from './getInitFolder.js'
+export * from './createProject.js'
+export * from './getProjectList.js'
 export * from './configureProject.js'

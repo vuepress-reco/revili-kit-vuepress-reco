@@ -12,12 +12,14 @@
   ],
   "scripts": {
     "build": "pnpm run build:tsc & pnpm run build:copy",
-    "build:copy": "cpx \"src/**/*.{d.ts,vue,html,png,svg,jpg}\" dist",
+    "build:copy": "cpx \"src/**/*.{d.ts,vue,html,png,svg,jpg,css}\" dist",
     "build:tsc": "tsc",
     "clean": "rimraf dist",
     "commit": "git add . && git cz",
     "dev": "pnpm run build:tsc --watch & pnpm run build:copy --watch",
     "eslint": "eslint",
+    "start": "./node_modules/.pnpm/revili@0.0.1-alpha.12_@babel+core@7.24.5_@types+node@18.11.9_vue@3.2.45/node_modules/revili/dist/node/cli.js start --dir=./dist",
+    "version": "./node_modules/.pnpm/revili@0.0.1-alpha.12_@babel+core@7.24.5_@types+node@18.11.9_vue@3.2.45/node_modules/revili/dist/node/cli.js -v",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "npm publish --tag latest",
     "release:pre": "npm publish --tag next"
@@ -46,7 +48,7 @@
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",
     "naive-ui": "2.38.2",
-    "revili": "0.0.1-alpha.7",
+    "revili": "0.0.1-alpha.12",
     "vue": "3.2.45",
     "vue-router": "^4.3.2",
     "vuepress-theme-reco": "2.0.0-rc.14"
