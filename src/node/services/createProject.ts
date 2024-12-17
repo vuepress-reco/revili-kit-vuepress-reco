@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { getKitData, gitly, updateKitData } from 'revili/node'
+import { getKitData, gitly, updateKitData, updateKitDataItem } from 'revili/node'
 import { Events } from '../../constants/index.js'
 
 export function createProject(socket: any) {
@@ -26,24 +26,22 @@ export function createProject(socket: any) {
       const projectName = path.basename(projectPath)
 
       // 更新项目列表数据
-      const kitData: {
+      const projectList = await getKitData<{
         projectList: {
           name: string
           path: string
         }[]
-      } = await getKitData('revili-kit-vuepress-reco')
+      }>('projectList')
 
       const newProjectList = [
-        ...kitData?.projectList || [],
+        ...(projectList || []),
         {
           name: projectName,
           path: projectPath
         }
       ]
 
-      await updateKitData('revili-kit-vuepress-reco', {
-        projectList: newProjectList
-      })
+      await updateKitDataItem('projectList', newProjectList)
 
       socket?.send(Events.CREATE_PROJECT, {
         result: 'success',

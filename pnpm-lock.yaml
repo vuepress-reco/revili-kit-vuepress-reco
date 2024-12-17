@@ -8,8 +8,8 @@ dependencies:
     specifier: 2.38.2
     version: 2.38.2(vue@3.2.45)
   revili:
-    specifier: 0.0.1-alpha.12
-    version: 0.0.1-alpha.12(@babel/core@7.24.5)(@types/node@18.11.9)(vue@3.2.45)
+    specifier: 0.0.1-alpha.14
+    version: 0.0.1-alpha.14(@babel/core@7.24.5)(@types/node@18.11.9)(vue@3.2.45)
   vue:
     specifier: 3.2.45
     version: 3.2.45
@@ -1267,8 +1267,8 @@ packages:
     dev: false
     optional: true
 
-  /@revili/helpers@0.0.1-alpha.10(@types/node@18.11.9):
-    resolution: {integrity: sha512-kAgvL0TELIOG7Es5UPQrFiNUSOpD1IGGGiPBlby1wU0xR7JhHfUy9DazIyxauf5Ui2A+4X7bCHxoA5BBi8npUQ==}
+  /@revili/helpers@0.0.1-alpha.12(@types/node@18.11.9):
+    resolution: {integrity: sha512-DuNm/qZMWJiJY5nOkgAQmlsccwXDbJm+pz6uNf7Vl2fazX64wrNjTF/IkFwfxyabYwJhNQxBIzZ+Mj2dAqR9HA==}
     dependencies:
       '@types/inquirer': 9.0.3
       cac: 6.7.14
@@ -1325,6 +1325,7 @@ packages:
     resolution: {integrity: sha512-C/zbRYRXFjWvz9Z4haRxcTdnkPt1BtCkz+7RtBSuNmKzMzp3ZxdM28Mpccn6pt28/UWUCTXa+b0Mx1k3g6NOMA==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1333,6 +1334,7 @@ packages:
     resolution: {integrity: sha512-l3m9ewPgjQSXrUMHg93vt0hYCGnrMOcUpTz6FLtbwljo2HluS4zTXFy2571YQbisTnfTKPZ01u/ukJdQTLGh9A==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -1341,6 +1343,7 @@ packages:
     resolution: {integrity: sha512-rJ5D47d8WD7J+7STKdCUAgmQk49xuFrRi9pZkWoRD1UeSMakbcepWXPF8ycChBoAqs1pb2wzvbY6Q33WmN2ftw==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1349,6 +1352,7 @@ packages:
     resolution: {integrity: sha512-be6Yx37b24ZwxQ+wOQXXLZqpq4jTckJhtGlWGZs68TgdKXJgw54lUUoFYrg6Zs/kjzAQwEwYbp8JxZVzZLRepQ==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -1357,6 +1361,7 @@ packages:
     resolution: {integrity: sha512-hNVMQK+qrA9Todu9+wqrXOHxFiD5YmdEi3paj6vP02Kx1hjd2LLYR2eaN7DsEshg09+9uzWi2W18MJDlG0cxJA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1365,6 +1370,7 @@ packages:
     resolution: {integrity: sha512-ROCM7i+m1NfdrsmvwSzoxp9HFtmKGHEqu5NNDiZWQtXLA8S5HBCkVvKAxJ8U+CVctHwV2Gb5VUaK7UAkzhDjlg==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1373,6 +1379,7 @@ packages:
     resolution: {integrity: sha512-0UyyRHyDN42QL+NbqevXIIUnKA47A+45WyasO+y2bGJ1mhQrfrtXUpTxCOrfxCR4esV3/RLYyucGVPiUsO8xjg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1381,6 +1388,7 @@ packages:
     resolution: {integrity: sha512-xuglR2rBVHA5UsI8h8UbX4VJ470PtGCf5Vpswh7p2ukaqBGFTnsfzxUBetoWBWymHMxbIG0Cmx7Y9qDZzr648w==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -1389,6 +1397,7 @@ packages:
     resolution: {integrity: sha512-LKaqQL9osY/ir2geuLVvRRs+utWUNilzdE90TpyoX0eNqPzWjRm14oMEE+YLve4k/NAqCdPkGYDaDF5Sw+xBfg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -6570,6 +6579,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -6579,6 +6589,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -6588,6 +6599,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -6597,6 +6609,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -7711,7 +7724,7 @@ packages:
       postcss: ^8.4.38
     dependencies:
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
     dev: false
 
@@ -8022,7 +8035,7 @@ packages:
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.38)
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
     dev: false
 
@@ -8033,7 +8046,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
     dev: false
 
   /postcss-modules-values@4.0.0(postcss@8.4.38):
@@ -8053,7 +8066,7 @@ packages:
       postcss: ^8.2.14
     dependencies:
       postcss: 8.4.14
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
     dev: false
 
   /postcss-nested@6.0.0(postcss@8.4.21):
@@ -8194,6 +8207,7 @@ packages:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
+    dev: true
 
   /postcss-selector-parser@6.1.0:
     resolution: {integrity: sha512-UMz42UD0UY0EApS0ZL9o1XnLhSTtvvvLe5Dc2H2O56fvRZi+KulDyf5ctDhhtYJBGKStV2FL1fy6253cmLgqVQ==}
@@ -8576,13 +8590,13 @@ packages:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  /revili@0.0.1-alpha.12(@babel/core@7.24.5)(@types/node@18.11.9)(vue@3.2.45):
-    resolution: {integrity: sha512-ydRiTqEFxQ9NjdRSFTrY60RVxOLo1/o87EGI3/fow7PKynWKvbyEiBeoAPpnGmND/FvzDO6x1S9mPJipc1QbgA==}
+  /revili@0.0.1-alpha.14(@babel/core@7.24.5)(@types/node@18.11.9)(vue@3.2.45):
+    resolution: {integrity: sha512-42gqxewrIlTa4GLtktwNtJ0NDBEvOcfi2VaQzzzPKq0REKyP3AohupI37irah+zmUlZv5M0iz8AZwCzEVH9UkQ==}
     hasBin: true
     dependencies:
       '@babel/plugin-transform-nullish-coalescing-operator': 7.24.1(@babel/core@7.24.5)
       '@babel/plugin-transform-optional-chaining': 7.24.5(@babel/core@7.24.5)
-      '@revili/helpers': 0.0.1-alpha.10(@types/node@18.11.9)
+      '@revili/helpers': 0.0.1-alpha.12(@types/node@18.11.9)
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.11)(vue@3.2.45)
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.2.11)(vue@3.2.45)
       autoprefixer: 10.4.13(postcss@8.4.21)
@@ -9431,7 +9445,7 @@ packages:
       postcss-js: 4.0.1(postcss@8.4.14)
       postcss-load-config: 3.1.4(postcss@8.4.14)
       postcss-nested: 5.0.6(postcss@8.4.14)
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
       resolve: 1.22.8

@@ -48,7 +48,7 @@
   "dependencies": {
     "@vicons/ionicons5": "^0.12.0",
     "naive-ui": "2.38.2",
-    "revili": "0.0.1-alpha.12",
+    "revili": "0.0.1-alpha.14",
     "vue": "3.2.45",
     "vue-router": "^4.3.2",
     "vuepress-theme-reco": "2.0.0-rc.14"
